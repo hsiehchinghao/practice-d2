@@ -1,0 +1,121 @@
+
+/* 設定全局變量 */
+/* :root {
+    --line-border-fill:var(--line-border-fill);
+    --line-border-empty:var(--line-border-empty);
+} */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background-color: bisque;
+}
+
+
+.container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    transform: translateX(-50%);
+}
+
+.progress-container {
+    display:flex;
+    justify-content: space-between;
+    position:relative;
+    margin-bottom: 20px;
+}
+
+/* 需要寫在  */
+.progress-container::before {
+    content:"";
+    background-color: rgb(235, 234, 234);
+    position:absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.progress {
+    background-color: rgb(130, 78, 0);
+    position: absolute;
+    top: 50%;
+    left:0;
+    height: 4px;
+    width: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 1s;
+}
+
+.circle {
+    background-color: #fff;
+    color: #13d8f6;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffe6e6f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    
+}
+
+.circle.active{
+    background-color: #cf4848;
+    color: #13d8f6;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffe6e6f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    
+}
+
+
+.btn-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    background-color: #cf4848;
+    color:#13d8f6;
+    border-radius: 6px;
+    width: 30%;
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: scale(0.8);
+}
+/* 操作時的效果 */
+.btn:focus {
+    outline: 0;
+    /* outline跟border不同，不佔據空間 */
+}
+
+/* 設定不允許操控時的樣子 */
+.btn:disabled {
+    background-color: #dcaaaa;
+    cursor: not-allowed;
+}
+
